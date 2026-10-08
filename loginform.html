@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Login Form</title>
+    <style>
+        /* Global reset & base styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f0f2f5 0%, #e6e9f0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        /* Card container */
+        .login-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            padding: 2.5rem 2rem;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .login-card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Heading */
+        .login-card h2 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subhead {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            border-left: 3px solid #3b82f6;
+            padding-left: 0.75rem;
+        }
+
+        /* Form fields */
+        .form-group {
+            margin-bottom: 1.4rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #334155;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-size: 1rem;
+            background: #f8fafc;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 14px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            color: #0f172a;
+        }
+
+        .form-group input::placeholder {
+            color: #94a3b8;
+            font-weight: 400;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus {
+            border-color: #3b82f6;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Forgot password link */
+        .forgot-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 0.25rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .forgot-row a {
+            font-size: 0.85rem;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        .forgot-row a:hover {
+            color: #1e40af;
+            text-decoration: underline;
+        }
+
+        /* Login button */
+        .login-btn {
+            width: 100%;
+            background: #3b82f6;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            box-shadow: 0 8px 18px -6px rgba(59, 130, 246, 0.4);
+            letter-spacing: 0.3px;
+            margin-top: 0.25rem;
+        }
+
+        .login-btn:hover {
+            background: #2563eb;
+            box-shadow: 0 10px 22px -6px rgba(37, 99, 235, 0.5);
+        }
+
+        .login-btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 10px -4px rgba(37, 99, 235, 0.6);
+        }
+
+        /* Sign up suggestion */
+        .signup-text {
+            text-align: center;
+            margin-top: 1.75rem;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .signup-text a {
+            color: #3b82f6;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 0.25rem;
+            transition: color 0.15s;
+        }
+
+        .signup-text a:hover {
+            color: #1e40af;
+            text-decoration: underline;
+        }
+
+        /* Small decorative divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 1.25rem 0 0.5rem;
+            color: #cbd5e1;
+            font-size: 0.75rem;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        /* Responsive tweak */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 1.8rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .login-card h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h2>Welcome back</h2>
+        <div class="subhead">Sign in to your account</div>
+
+        <form action="#" method="post">
+            <!-- Email / Username field -->
+            <div class="form-group">
+                <label for="email">Email or username</label>
+                <input 
+                    type="text" 
+                    id="email" 
+                    name="email" 
+                    placeholder="you@example.com" 
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <!-- Password field -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="••••••••" 
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <!-- Forgot password link -->
+            <div class="forgot-row">
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="login-btn">Log in</button>
+
+            <!-- Sign up prompt -->
+            <div class="signup-text">
+                Don't have an account? <a href="#">Create one</a>
+            </div>
+
+            <!-- subtle divider (optional visual) -->
+            <div class="divider">
+                <span class="divider-line"></span>
+                <span>or</span>
+                <span class="divider-line"></span>
+            </div>
+            <!-- The 'or' divider is purely decorative – no extra button, just for visual style -->
+        </form>
+    </div>
+</body>
+</html>

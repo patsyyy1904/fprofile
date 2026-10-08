@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAT's RESTAURANT | Perfect Burgers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #f8c51c;
+            font-size: 32px;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #f8c51c;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+            url('https://images.unsplash.com/photo-1571091718767-18b5b1457add');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero span {
+            color: #f8c51c;
+            display: block;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            background-color: #f8c51c;
+            color: #1a1a1a;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e0b318;
+            transform: translateY(-3px);
+        }
+
+        .burgers {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+        }
+
+        .burgers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap: 40px;
+        }
+
+        .burger-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .burger-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .avocado {
+            background-image: url('https://images.unsplash.com/photo-1551782450-a2132b4ba21d');
+        }
+
+        .jalapeno {
+            background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd');
+        }
+
+        .burger-content {
+            padding: 25px;
+        }
+
+        .price {
+            color: #f8c51c;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .order-form-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f8f5f0;
+            padding: 40px;
+            border-radius: 15px;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .form-title h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .radio-label, .checkbox-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .radio-label input, .checkbox-label input {
+            width: auto;
+            margin-right: 10px;
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .submit-btn {
+            background-color: #f8c51c;
+            color: #1a1a1a;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+        fieldset {
+            border: 1px solid #f8c51c;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #1a1a1a;
+            padding: 0 10px;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            color: #f8c51c;
+        }
+
+        .footer-column p {
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-container">
+        <a href="#" class="logo">PAT's <span>RESTAURANT</span></a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="container">
+        <h1>Your Perfect <span>Burgers</span></h1>
+        <p>Unang kagat, bat di ako naging sapat.</p>
+        <a href="#menu" class="btn">Order Now</a>
+    </div>
+</section>
+
+<section class="burgers" id="menu">
+    <div class="container">
+        <div class="section-title">
+            <h2>ALL TIME FAVORITES</h2>
+        </div>
+
+        <div class="burgers-grid">
+            <div class="burger-card">
+                <div class="burger-img avocado"></div>
+                <div class="burger-content">
+                    <h3>Avocado Smash</h3>
+                    <p>Fresh avocado with plant-based patty, Para sa taong inapi.</p>
+                    <div class="price">45 pesos</div>
+                </div>
+            </div>
+
+            <div class="burger-card">
+                <div class="burger-img jalapeno"></div>
+                <div class="burger-content">
+                    <h3>Spicy Jalapeño Crunch</h3>
+                    <p>Spicy to para sa matapang, So bat di moko pinaglaban.</p>
+                    <div class="price">90 pesos</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="order-form-section" id="order">
+    <div class="container">
+        <div class="form-container">
+            <div class="form-title">
+                <h2>PLACE YOUR ORDER</h2>
+                <p>Fill out this form to order your perfect burger</p>
+            </div>
+            
+            <form id="orderForm" action="#" method="GET">
+                
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>
+                                Full Name:
+                                <input type="text" name="fullName" placeholder="Full name mo, di si crush" required>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                Phone Number:
+                                <input type="tel" name="phone" placeholder="0956-019-1264" required>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>
+                                Email Address:
+                                <input type="email" name="email" placeholder="sya.parin@example.com" required>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                Delivery Address:
+                                <input type="text" name="address" placeholder="San ka ba, dito na me">
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Burger Selection</legend>
+                    
+                    <div class="form-group">
+                        <p>Choose Your <del>Partner</del> Burger:</p>
+                        <div>
+                            <label class="radio-label">
+                                <input type="radio" name="burgerType" value="avocado" required>
+                                Avocado Smash (45 pesos)
+                            </label>                            
+                            <label class="radio-label">
+                                <input type="radio" name="burgerType" value="jalapeno" required>
+                                Spicy Jalapeño Crunch (90 pesos)
+                            </label>                            
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>
+                                Quantity:
+                                <input type="number" name="quantity" min="1" max="20" value="1" required>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                Burger Size:
+                                <select name="size">
+                                    <option value="regular">Regular</option>
+                                    <option value="large">Large (+15 pesos)</option>
+                                    <option value="double">Double Patty (+30 pesos)</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Customization Options</legend>
+                    
+                    <div class="form-group">
+                        <p>Add Extras (extra ka lang pala):</p>
+                        <div>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="extras" value="cheese">
+                                Extra Cheese (+10 pesos)
+                            </label>
+                                                        
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="extras" value="avocado">
+                                Extra Avocado (+15 pesos)
+                            </label>
+                            
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="extras" value="sauce">
+                                Extra Special Sauce (+5 pesos)
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Payment Method</legend>
+                    
+                    <div class="form-group">
+                        <p>Choose Payment Method:</p>
+                        <div>
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="cash" required>
+                                Cash on Delivery
+                            </label>
+                            
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="gcash" required>
+                                GCash
+                            </label>
+                            
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="card" required>
+                                Credit/Debit Card
+                            </label>
+                        </div>
+                    </div>                    
+                </fieldset>
+               
+                <div class="form-submit">
+                    <button type="submit" class="submit-btn">PLACE ORDER</button>
+                    <button type="reset" class="btn" style="background-color: #666; margin-left: 15px;">RESET FORM</button>
+                    <p style="margin-top: 15px; color: #666; font-size: 14px;">We'll contact you within 15 minutes to confirm your order.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>PAT's RESTAURANT</h3>
+                <p>Maiiyak ka sa sarap <del>SAKIT</del>.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>Ilalim ng puting ilaw</p>
+                <p>0956-019-1264</p>
+                <p>email: patsnumba1@gmail.com</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Operating Hours</h3>
+                <p>Monday - Friday: 10AM - 6PM</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

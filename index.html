@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Patsyyy</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">PATS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#techstack">Tech Stack</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-text">PORTFOLIO</div>
+        <div class="container">
+            <div class="hero-grid">
+                
+                <!-- Left Column (Text) -->
+                <div class="hero-left reveal-left">
+                    <span class="greeting">Hello, I'm</span>
+                    <h1 class="typing-title">Patrick Glenn<br>T. Borbon</h1>
+                    <div class="profession">BSIT STUDENT</div>
+                </div>
+
+                <!-- Center Column (Image) -->
+                <div class="hero-center reveal-scale">
+                    <div class="hero-image-wrapper">
+                        <img src="picture.png" alt="Portrait of Patrick Glenn T. Borbon">
+                    </div>
+                </div>
+
+                <!-- Right Column (About Paragraph) -->
+                <div class="hero-right reveal-right">
+                    <h3 class="description-title">DESCRIPTION</h3>
+                    <p>I am a Bachelor of Science in Information Technology (BSIT) student interested in web development, programming, and information technology. I enjoy learning how websites and applications are created and how technology can solve real-world problems.</p>
+                    <p>My goal is to improve my programming skills and gain more experience in creating useful and user-friendly systems.</p>
+                    <div class="availability">
+                        <i class="fa-solid fa-circle"></i>
+                        <span>Available all the time</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="projects-header reveal">
+                <h2 class="section-title">Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 - Linked to burger.html -->
+                <a href="burger.html" class="project-card reveal" style="text-decoration: none; color: inherit;">
+                    <div class="project-img">
+                        <img src="burger.png" alt="Pat's Burger Ordering System">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-num">01</span>
+                            <i class="fa-solid fa-arrow-right project-arrow"></i>
+                        </div>
+                        <h3>Pat's Burger Ordering System</h3>
+                        <p>A simple ordering system designed to help customers to view the available burgers, choose their orders, and place them easily.</p>
+                    </div>
+                </a>
+
+                <!-- Project 2 - Now linked to loginform.html -->
+                <a href="loginform.html" class="project-card reveal" style="text-decoration: none; color: inherit;">
+                    <div class="project-img">
+                        <img src="login.png" alt="Login Form">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-meta">
+                            <span class="project-num">02</span>
+                            <i class="fa-solid fa-arrow-right project-arrow"></i>
+                        </div>
+                        <h3>Login Form</h3>
+                        <p>The log in form is used to allow users to access the system. It includes fields such as Username, Password, Email, and other necessary information.</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2 class="section-title reveal">Education</h2>
+            <div class="edu-list">
+                <div class="edu-item reveal">
+                    <div>
+                        <h4>Bachelor of Science in Information Technology</h4>
+                        <p>Nueva Vizcaya State University</p>
+                    </div>
+                    <span class="edu-date">PRESENT</span>
+                </div>
+                <div class="edu-item reveal">
+                    <div>
+                        <h4>High School</h4>
+                        <p>Nueva Vizcaya General Comprehensive High School</p>
+                    </div>
+                    <span class="edu-date">COMPLETED</span>
+                </div>
+                <div class="edu-item reveal">
+                    <div>
+                        <h4>Elementary School</h4>
+                        <p>Bayombong Central School SPED Center</p>
+                    </div>
+                    <span class="edu-date">COMPLETED</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section (separate container) -->
+    <section class="techstack" id="techstack">
+        <div class="container">
+            <h2 class="section-title reveal">Tech Stack</h2>
+            <div class="techstack-grid">
+
+                <div class="tech-card reveal">
+                    <i class="fa-brands fa-html5 tech-icon"></i>
+                    <h4>HTML</h4>
+                    <p>The foundation of every web page. Used to structure content like text, images, and links.</p>
+                </div>
+
+                <div class="tech-card reveal">
+                    <i class="fa-brands fa-css3-alt tech-icon"></i>
+                    <h4>CSS</h4>
+                    <p>Styles the layout, colors, and fonts to make websites visually appealing and responsive.</p>
+                </div>
+
+                <div class="tech-card reveal">
+                    <i class="fa-brands fa-java tech-icon"></i>
+                    <h4>Java</h4>
+                    <p>A powerful object-oriented language used to build desktop, mobile, and enterprise applications.</p>
+                </div>
+
+                <div class="tech-card reveal">
+                    <i class="fa-brands fa-js tech-icon"></i>
+                    <h4>JavaScript</h4>
+                    <p>Adds interactivity and dynamic behavior to web pages, like animations and form validation.</p>
+                </div>
+
+                <div class="tech-card reveal">
+                    <i class="fa-brands fa-php tech-icon"></i>
+                    <h4>PHP</h4>
+                    <p>A server-side scripting language used to build dynamic websites and connect to databases.</p>
+                </div>
+
+                <div class="tech-card reveal">
+                    <i class="fa-solid fa-database tech-icon"></i>
+                    <h4>MySQL</h4>
+                    <p>A relational database system for storing, organizing, and retrieving data efficiently.</p>
+                </div>
+
+                <div class="tech-card reveal">
+                    <i class="fa-brands fa-bootstrap tech-icon"></i>
+                    <h4>Bootstrap</h4>
+                    <p>A CSS framework with ready-made components for fast, mobile-first responsive design.</p>
+                </div>
+
+                <div class="tech-card reveal">
+                    <i class="fa-brands fa-github tech-icon"></i>
+                    <h4>GitHub</h4>
+                    <p>A platform for hosting code, collaborating with others, and tracking project versions.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="quote-wrapper reveal">
+                <div class="quote-icon">“</div>
+                <p class="quote-text">The best way to predict the future is to invent it</p>
+                <div class="signature">Alan Kay</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <div class="contact-left reveal-left">
+                    <h2>CONTACT</h2>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>paglebonborbon@gmail.com</span>
+                        </div>
+                        <!-- Updated Facebook link to point to the provided profile URL -->
+                        <div class="contact-item">
+                            <i class="fa-brands fa-facebook"></i>
+                            <a href="https://www.facebook.com/patrick.borbon" target="_blank" rel="noopener noreferrer">Patrick Borbon</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>0956-019-1264</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Nueva Vizcaya, Philippines</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right reveal-right">
+                    <div class="laptop-mockup">
+                        <div class="laptop-screen">
+                            YOU ARE<br>WELCOME<br>TO KNOW ME
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom reveal">
+                <p>&copy; 2026 Patrick Glenn T. Borbon. All rights reserved.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Link to External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
